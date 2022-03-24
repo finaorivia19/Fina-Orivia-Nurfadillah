@@ -1,0 +1,79 @@
+
+								JOBSHEET IV
+							BRUTE FORCE DAN DIVIDE CONQUER
+
+Nama	: Fina Orivia Nurfadillah
+Absen	: 13
+NIM	: 2141720256
+
+## 4.2.3 Pertanyaan ##
+1. Jelaskan mengenai base line Algoritma Divide Conquer untuk melakukan pencarian nilai faktorial!
+Jawab:
+	Apabila nilai n equals atau sama dengan 1, maka program akan mengeluarkan output return 1. 
+	jika tidak, variabel n akan dikurangi 1, dimana setiap loop/ perulangan pada variabel method dikalikan dengan nilai sebelumnya, 
+	dan program akan kembali pada return variabel fakto.
+
+2. Pada implementasi Algoritma Divide and Conquer Faktorial apakah lengkap terdiri dari 3 tahapan 
+divide, conquer, combine? Jelaskan masing-masing bagiannya pada kode program!
+Jawab:
+	Devide   : faktorialDC(n-1) pengurangan pada nilai n
+	Conquer : n*faktorialDC(n-1) penyelesaian dengan metode rekursif
+	Combine: n*faktorialDC(n-1) pengkombinasian dengan perkalian
+
+3. Apakah memungkinkan perulangan pada method faktorialBF() dirubah selain menggunakan 
+for?Buktikan!
+Jawab: 
+	Iya, memungkinkan terjadinya perulangan pada method faktorialBF() diubah menjadi selain for dapat diubah menjadi perulangan jenis while ataupun do while
+
+4. Tambahkan pegecekan waktu eksekusi kedua jenis method tersebut!
+Jawab:
+5. Buktikan dengan inputan elemen yang di atas 20 angka, apakah ada perbedaan waktu eksekusi?
+Jawab:
+	
+## 4.3.3 Pertanyaan ##
+1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu PangkatBF() dan PangkatDC()!
+Jawab:
+	- method pangkatBF() menggunakan fungsi iterative yaitu fungsi yang melakukan perulangan pada sekelompok intruksi dan perulangan dilakukan dalam batasan tertentu, dan ketika 	   syarat perulangan tidak lagi terpenuhi maka perulangan akan berhenti/keluar
+	- method pangkatDC()  menggunakan fungsi rekursif yaitu perulangan yang terjadi karena pengekselusian suatu fungsi dimana fungsi tersebut untuk memanggil dirinya sendiri
+
+2. Pada method PangkatDC() terdapat potongan program sebagai berikut:Jelaskan arti potongan kode tersebut!
+Jawab:
+	- Program tersebut yaitu apabila terdapat bilangan ganjil maka program akan melakukan pembagian terhadap variabel n.
+	- Namun jika bilangan tersebut genap maka program akan melakukan return/nilai balik, 	yang didalam return dilakukan pembagian terhadap variabel n
+
+3. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan
+Jawab:
+	Iya sudah, pada class pangkat method pangkatDC, yaitu
+	return (PangkatDC(a, n/2) * pangkatDC (a, n/2));
+
+4. Modifikasi kode program tersebut, anggap proses pengisian atribut dilakukan dengan konstruktor.
+Jawab:
+	
+5. Tambahkan menu agar salah satu method yang terpilih saja yang akan dijalankan!
+Jawab:
+
+## 4.4.3 Pertanyaan ##
+
+1. Berikan ilustrasi perbedaan perhitungan keuntungan dengan method TotalBF() ataupun 
+TotalDC()
+Jawab:
+	- perhitungan pada method TotalDC(), kode program lebih panjang daripada method TotalBF(), pada method ini juga dapat menyelesaikan case yang sulit.
+	- perhitungan pada methodTotalBF(), kode program lebih ringkas dan sederhana yang dapat menghasilkan algoritma yang mudah
+
+2. Perhatikan output dari kedua jenis algoritma tersebut bisa jadi memiliki hasil berbeda di belakang koma. Bagaimana membatasi output di belakang koma agar menjadi standar untuk 
+kedua jenis algoritma tersebut.
+Jawab:
+	- Mengganti sintax println menjadi sintax print, dan meringkas kode program
+	- System.out.print("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah = " + sm.totalBF(sm.keuntungan));
+
+3. Mengapa terdapat formulasi return value berikut?Jelaskan!
+Jawab:
+	Return value digunakan untuk mengembalikan nilai dari variabel lsum, rsum, dan arr[mid], dimana ketiganya masing-masing dijumlahkan sendiri terlebih dahulu
+
+4. Kenapa dibutuhkan variable mid pada method TotalDC()?
+Jawab:
+	Digunakan untuk menampung nilai dari (1+r)/2 dimana nanti akan digunakan pada nilai parameter di method TotalDC()
+
+5. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan 
+dengan program!
+Jawab:
