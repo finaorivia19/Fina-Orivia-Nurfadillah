@@ -1,0 +1,157 @@
+							         JOBSHEET XIII
+								TREE
+
+Nama	: Fina Orivia Nurfadillah
+Absen	: 13
+NIM	: 2141720256
+
+	Jawaban Pertanyaan Percobaan 2.1.2
+
+1. Mengapa dalam binary search tree proses pencarian data bisa lebih efektif dilakukan dibanding binary tree biasa?
+Jawab: Karena didalam binary search tree terdapat aturan yang berisi bahwa setiap child node sebelah kiri selalu memiliki nilai yang lebih kecil dari pada root node, dan juga sebaliknya pada child node sebelah kanan selalu memiliki nilai yang lebih besar nilainya daripada root node, sehingga terdapat proses efisiensi pada proses searching.
+	
+2. Untuk apakah di class Node, kegunaan dari atribut left dan right?
+Jawab: kegunaan dari atribut left dan right yaitu untuk menentukan leftchild dan rightchild, yang kegunaanya sama seperti next dan prev
+
+3.
+a. Untuk apakah kegunaan dari atribut root di dalam class BinaryTree?
+Jawab: kegunaan dari atribut root di dalam class BinaryTree yaitu untuk menentukan nilai yang terletak paling atas
+
+b. Ketika objek tree pertama kali dibuat, apakah nilai dari root?
+Jawab: nilai dari root saat objek pertama kali dibuat yaitu null atau kosong
+
+4. Ketika tree masih kosong, dan akan ditambahkan sebuah node baru, proses apa yang akan terjadi?
+Jawab: proses yang akan terjadi yaitu memasukkan atau menginputkan node kedalam suatu root yang telah dibuat
+
+5. Perhatikan method add(), di dalamnya terdapat baris program seperti di bawah 
+ini. Jelaskan secara detil untuk apa baris program tersebut?
+	if(data<current.data){
+	 if(current.left!=null){
+	 current = current.left;
+ 	}else{
+	 current.left = new Node(data);
+	 break;
+	 }
+Jawab: kode baris program diatas yaitu ketika data baru kurang dari data lama yang pernah diinputkan maka akan dilakukan pengecekan kembali apakah data bagian left atau kiri bernilai sama dengan null, jika iya maka data lama akan masuk kesebelah kiri/left. dan apabila tidak maka data kiri diganti dengan data yang baru saja diinputkan, kemudian setelah data diinputkan maka menuju ke break.
+
+
+	Jawaban  Pertanyaan Percobaan 13.2.1
+
+1. Apakah kegunaan dari atribut data dan idxLast yang ada di class BinaryTreeArray?
+Jawab: kegunaan dari atribut data dan idxLast adalah untuk mendeklarasikan banyaknya nilai yang terdapat pada array dan IdxLast untuk menentukan dimana letak nilai yang diinginkan agar tidak terjadi error saat proses add
+
+2. Apakah kegunaan dari method populateData()?
+Jawab: method populateData() digunakan untuk menginputkan atau memasukkan data agar dikenali atau dapat terbaca indexnya
+
+3. Apakah kegunaan dari method traverseInOrder()?
+Jawab: method traverseInOrder() digunakan untuk mencetak atau print secara inOrder seluruh data pada tree secara rekursif mulai dari nilai paling kiri
+
+4. Jika suatu node binary tree disimpan dalam array indeks 2, maka di indeks berapakah posisi left child dan rigth child masin-masing?
+Jawab: left = 1 dan right = 3
+
+5. Apa kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4?
+Jawab: kegunaan statement int idxLast = 6 pada praktikum 2 percobaan nomor 4 yaitu untuk membatasi index atau limit index agar berakhir/tetap pada nilai 6
+
+	Jawaban Pertanyaan Praktikum
+
+1. Buat method di dalam class BinaryTree yang akan menambahkan node dengan cara rekursif.
+Jawab:
+	void addrekursif(int key) {
+        root = insertRec(root, key);
+    }
+    
+    Node insertRec(Node root, int key) {
+        if (root == null) {
+            root = new Node(key);
+            return root;
+        }
+
+        if (key < root.data) {
+            root.left = insertRec(root.left, key);
+        } else if (key > root.data) {
+            root.right = insertRec(root.right, key);
+        }
+        return root;
+    }
+
+main tugas 1
+
+        bt.addrekursif(20);
+        bt.addrekursif(16);
+        bt.addrekursif(19);
+        bt.addrekursif(17);
+        bt.addrekursif(15);
+        bt.addrekursif(18);
+        bt.addrekursif(21);
+        bt.addrekursif(25);
+
+2. Buat method di dalam class BinaryTree untuk menampilkan nilai paling kecil dan yang paling besar yang ada di dalam tree.
+Jawab:
+	
+	int Min(Node node) { 
+      	   Node current = root;
+     	   while (current.left != null) {
+            	   current = current.left;
+           }
+          	 return current.data;
+    }
+
+    	int Max(Node node) {
+      	  Node current = root;
+      	  while (current.right != null) {
+            	  current = current.right;
+        }
+        	return current.data;
+    }
+
+main tugas 2
+
+	System.out.println("Nilai Paling Kecil: " + bt.Min(bt.root));
+     	System.out.println("Nilai Paling Besar: " + bt.Max(bt.root));
+
+3. Buat method di dalam class BinaryTree untuk menampilkan data yang ada di leaf.
+Jawab:
+         public void printLeaves(Node node) {
+        if (node == null) {
+            return;
+        }
+        if (node.isLeaf()) {
+            System.out.print(" " + node.data);
+            total++;
+        }
+        printLeaves(node.left);
+        printLeaves(node.right);
+    }
+
+4. Buat method di dalam class BinaryTree untuk menampilkan berapa jumlah leaf yang ada di dalam tree.
+Jawab:
+	public void printLeaves(Node node) {
+        if (node == null) {
+            return;
+        }
+        if (node.isLeaf()) {
+            System.out.print(" " + node.data);
+            total++;
+        }
+        printLeaves(node.left);
+        printLeaves(node.right);
+    }
+	
+5. Modifikasi class BinaryTreeArray, dan tambahkan : 
+• method add(int data) untuk memasukan data ke dalam tree 
+Jawab:
+	void add(int key) {
+                      idxLast++;
+                     data[idxLast] = key;
+                 }
+
+• method traversePreOrder() dan traversePostOrder()
+Jawab:
+
+	void traversePostOreder(int idxStart) {
+       	 if (idxStart <= idxLast) {
+           	 traversePostOreder(2 * idxStart + 1);
+           	 traversePostOreder(2 * idxStart + 2);
+            	System.out.print(data[idxStart] + " ");
+        }
+    }
