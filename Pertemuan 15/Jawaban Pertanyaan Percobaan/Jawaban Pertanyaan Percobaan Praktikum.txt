@@ -1,0 +1,47 @@
+							JAWABAN PERTANYAAN PERCOBAAN
+								JOBSHEET 15
+
+Nama	: Fina Orivia Nurfadillah
+Absen	: 13
+NIM	: 2141720256
+
+#Jawaban Pertanyaan Percobaan 2.1.3
+
+1. Sebutkan beberapa jenis (minimal 3) algoritma yang menggunakan dasar Graph, dan apakah kegunaan algoritma-algoritma tersebut?
+Jawab:
+	a. Algoritma Bellman-Ford Untuk mencari lintasan terpendek
+	b. Algoritma Boruvska Untuk menentukan pohon penjangkau minimum
+	c. Pencarian Melebar (Breadth First Search atau BFS) Untuk search
+	d. Pencarian Mendalam (Depth First Search atau DFS) Untuk search
+
+2. Pada class Graph terdapat array bertipe LinkedList, yaitu LinkedList list[]. Apakah tujuan pembuatan variabel tersebut ? 
+Jawab: Untuk memanggil objek linkedlist dan mengubah menjadi objek array yang akan diisikan oleh vertex
+
+3. Apakah alasan pemanggilan method addFirst() untuk menambahkan data, bukan method add jenis lain pada linked list ketika digunakan pada method addEdge pada class Graph?
+Jawab: alasannya karena untuk mengenalkan data pada data awal
+
+4. Bagaimana cara mendeteksi prev pointer pada saat akan melakukan penghapusan suatu edge pada graph ?
+Jawab: dengan me looping edge, apabila vertex lebih besar dari i dan destination sama dengan i maka edge terhapus secara otomatis
+
+5. Kenapa pada praktikum 2.1.1 langkah ke-12 untuk menghapus path yang bukan merupakan lintasan pertama kali menghasilkan output yang salah ? Bagaimana solusinya ?
+Jawab: output tidak mengalami error tetapi data vertex yang dikeluarkan mengalami perubahan lintasan
+
+#Jawaban Pertanyaan Percobaan 2.2.3
+
+1. Apakah perbedaan degree/derajat pada directed dan undirected graph?
+Jawab: directed graph degree mempunyai nilai yang berbeda karena terdapat nilai in out sedangkan undirected degree memiliki nilai yang sama karena tidak ada nilai in out
+
+2. Pada implementasi graph menggunakan adjacency matriks. Kenapa jumlah vertices harus ditambahkan dengan 1 pada indeks array berikut?
+Jawab: karena index matrix dimulai dari 0, dan vertex dalam matrix bernilai sama dengan vertex yang seharysnya ditambah dengan 1
+
+3. Apakah kegunaan method getEdge() ?
+Jawab: untuk menampilkan apakah vertex tersedia atau tidak
+
+4. Termasuk jenis graph apakah uji coba pada praktikum 2.2?
+Jawab: termasuk kedalam jenis directed graph
+
+5. Mengapa pada method main harus menggunakan try-catch Exception  ?
+Jawab: menggunakan try-catch Exception agar program yang mengalami error dapat tetap berjalan dan tidak mengalami berhenti
+
+
+
